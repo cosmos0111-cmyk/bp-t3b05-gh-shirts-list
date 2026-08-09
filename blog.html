@@ -1,369 +1,367 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-night-signal">
-    <meta name="description" content="공항 셔츠룸 모음 — 출장과 접대 사이에서 망설이는 실무자를 위한 조건별 선택 기준. 눈으로 확인할 수 있는 항목과 물어봐야만 아는 정보를 정리했습니다.">
-    <meta name="keywords" content="공항 셔츠룸, 셔츠룸 모음, 공항 셔츠룸 모음, 공항 셔츠룸 안내, 공항 셔츠룸 선택">
-    <link rel="canonical" href="https://airport-shirt-guide.hardcoreroom.com/blog.html">
-    <title>공항 셔츠룸 모음 — 출장자를 위한 나이트 트랜짓 맵</title>
-    <meta property="og:title" content="공항 셔츠룸 모음 — 출장자를 위한 나이트 트랜짓 맵">
-    <meta property="og:description" content="공항 셔츠룸 모음 — 출장과 접대 사이에서 망설이는 실무자를 위한 조건별 선택 기준. 눈으로 확인할 수 있는 항목과 물어봐야만 아는 정보를 정리했습니다.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        :root {
-            --bg-signal: #0a0e0f;
-            --fg-signal: #d4e8e0;
-            --accent-neon: #00e676;
-            --accent-warn: #ff9100;
-            --accent-brutal: #ff1744;
-            --grid-gap: 2.66rem;
-            --font-mono: 'Courier New', Courier, monospace;
-            --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --border-raw: 2px solid var(--fg-signal);
-            --glow-neon: 0 0 12px rgba(0, 230, 118, 0.5);
-        }
-        body {
-            background-color: var(--bg-signal);
-            color: var(--fg-signal);
-            font-family: var(--font-sans);
-            line-height: 1.7;
-            letter-spacing: 0.02em;
-            overflow-x: hidden;
-        }
-        .m-grid-266l {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--grid-gap);
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .x-btn-i0e2-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 14, 15, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: var(--border-raw);
-            z-index: 1000;
-            padding: 0.8rem 1.5rem;
-            transition: all 0.3s ease;
-        }
-        .x-btn-i0e2-nav.scrolled {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-            border-bottom-color: var(--accent-neon);
-        }
-        .q-nav-jl2r-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .n-grid-9npz {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .q-nav-jl2r-list {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-            font-family: var(--font-mono);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        .q-nav-jl2r-list li {
-            cursor: pointer;
-            position: relative;
-            padding: 0.3rem 0;
-            color: var(--fg-signal);
-            transition: color 0.2s;
-        }
-        .q-nav-jl2r-list li:hover {
-            color: var(--accent-neon);
-            text-shadow: var(--glow-neon);
-        }
-        .v-main-1ksy {
-            margin-top: 6rem;
-            padding-bottom: 4rem;
-        }
-        .v-btn-nwqi-divider {
-            border: none;
-            border-top: 2px dashed var(--fg-signal);
-            margin: 3rem 0;
-            opacity: 0.4;
-        }
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-        .hamburger-menu span {
-            width: 28px;
-            height: 3px;
-            background: var(--accent-neon);
-            transition: 0.3s;
-        }
-        .brutal-card {
-            border: var(--border-raw);
-            padding: 2rem;
-            background: #0f1517;
-            box-shadow: 6px 6px 0px #000;
-            transition: all 0.25s;
-        }
-        .brutal-card:hover {
-            box-shadow: 10px 10px 0px var(--accent-neon);
-            transform: translate(-2px, -2px);
-        }
-        .neon-title {
-            font-family: var(--font-mono);
-            font-size: 2.6rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: var(--accent-neon);
-            text-shadow: var(--glow-neon);
-            border-left: 8px solid var(--accent-neon);
-            padding-left: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .data-point {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px dotted var(--fg-signal);
-            padding: 0.8rem 0;
-            font-family: var(--font-mono);
-            font-size: 0.95rem;
-        }
-        .data-point span:last-child {
-            color: var(--accent-neon);
-            font-weight: 700;
-        }
-        .checklist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        .check-item {
-            background: #0a0f10;
-            border: 1px solid #2a3a3a;
-            padding: 1.5rem;
-            border-radius: 2px;
-        }
-        .check-item h4 {
-            color: var(--accent-warn);
-            font-family: var(--font-mono);
-            margin-bottom: 0.8rem;
-        }
-        @media (max-width: 768px) {
-            .q-nav-jl2r-list {
-                display: none;
-                position: absolute;
-                top: 65px;
-                left: 0;
-                width: 100%;
-                background: var(--bg-signal);
-                flex-direction: column;
-                padding: 2rem;
-                border-bottom: 2px solid var(--accent-neon);
-                gap: 1.5rem;
-            }
-            .q-nav-jl2r-list.active {
-                display: flex;
-            }
-            .hamburger-menu {
-                display: flex;
-            }
-            .neon-title {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-  <meta property="og:url" content="https://airport-shirt-guide.hardcoreroom.com/blog.html">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="공항 셔츠룸 모음 — 출장과 접대 사이에서 망설이는 실무자를 위한 조건별 선택 기준. 눈으로 확인할 수 있는 항목과 물어봐야만 아는 정보를 정리했습니다.">
+ <meta name="keywords" content="공항 셔츠룸, 셔츠룸 모음, 공항 셔츠룸 모음, 공항 셔츠룸 안내, 공항 셔츠룸 선택">
+ <link rel="canonical" href="https://airport-shirt-guide.hardcoreroom.com/blog.html">
+ <title>공항 셔츠룸 모음 — 출장자를 위한 나이트 트랜짓 맵</title>
+ <meta property="og:title" content="공항 셔츠룸 모음 — 출장자를 위한 나이트 트랜짓 맵">
+ <meta property="og:description" content="공항 셔츠룸 모음 — 출장과 접대 사이에서 망설이는 실무자를 위한 조건별 선택 기준. 눈으로 확인할 수 있는 항목과 물어봐야만 아는 정보를 정리했습니다.">
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ :root {
+ --bg-signal: #0a0e0f;
+ --fg-signal: #d4e8e0;
+ --accent-neon: #00e676;
+ --accent-warn: #ff9100;
+ --accent-brutal: #ff1744;
+ --grid-gap: 2.66rem;
+ --font-mono: 'Courier New', Courier, monospace;
+ --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ --border-raw: 2px solid var(--fg-signal);
+ --glow-neon: 0 0 12px rgba(0, 230, 118, 0.5);
+ }
+ body {
+ background-color: var(--bg-signal);
+ color: var(--fg-signal);
+ font-family: var(--font-sans);
+ line-height: 1.7;
+ letter-spacing: 0.02em;
+ overflow-x: hidden;
+ }
+ .m-grid-266l {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: var(--grid-gap);
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 1.5rem;
+ }
+ .x-btn-i0e2-nav {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ background: rgba(10, 14, 15, 0.95);
+ backdrop-filter: blur(8px);
+ border-bottom: var(--border-raw);
+ z-index: 1000;
+ padding: 0.8rem 1.5rem;
+ transition: all 0.3s ease;
+ }
+ .x-btn-i0e2-nav.scrolled {
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+ border-bottom-color: var(--accent-neon);
+ }
+ .q-nav-jl2r-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ max-width: 1200px;
+ margin: 0 auto;
+ }
+ .n-grid-9npz {
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+ }
+ .q-nav-jl2r-list {
+ display: flex;
+ list-style: none;
+ gap: 2.5rem;
+ font-family: var(--font-mono);
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ }
+ .q-nav-jl2r-list li {
+ cursor: pointer;
+ position: relative;
+ padding: 0.3rem 0;
+ color: var(--fg-signal);
+ transition: color 0.2s;
+ }
+ .q-nav-jl2r-list li:hover {
+ color: var(--accent-neon);
+ text-shadow: var(--glow-neon);
+ }
+ .v-main-1ksy {
+ margin-top: 6rem;
+ padding-bottom: 4rem;
+ }
+ .v-btn-nwqi-divider {
+ border: none;
+ border-top: 2px dashed var(--fg-signal);
+ margin: 3rem 0;
+ opacity: 0.4;
+ }
+ .hamburger-menu {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ }
+ .hamburger-menu span {
+ width: 28px;
+ height: 3px;
+ background: var(--accent-neon);
+ transition: 0.3s;
+ }
+ .brutal-card {
+ border: var(--border-raw);
+ padding: 2rem;
+ background: #0f1517;
+ box-shadow: 6px 6px 0px #000;
+ transition: all 0.25s;
+ }
+ .brutal-card:hover {
+ box-shadow: 10px 10px 0px var(--accent-neon);
+ transform: translate(-2px, -2px);
+ }
+ .neon-title {
+ font-family: var(--font-mono);
+ font-size: 2.6rem;
+ font-weight: 900;
+ text-transform: uppercase;
+ color: var(--accent-neon);
+ text-shadow: var(--glow-neon);
+ border-left: 8px solid var(--accent-neon);
+ padding-left: 1.5rem;
+ margin-bottom: 2rem;
+ }
+ .data-point {
+ display: flex;
+ justify-content: space-between;
+ border-bottom: 1px dotted var(--fg-signal);
+ padding: 0.8rem 0;
+ font-family: var(--font-mono);
+ font-size: 0.95rem;
+ }
+ .data-point span:last-child {
+ color: var(--accent-neon);
+ font-weight: 700;
+ }
+ .checklist-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+ gap: 1.5rem;
+ margin-top: 1.5rem;
+ }
+ .check-item {
+ background: #0a0f10;
+ border: 1px solid #2a3a3a;
+ padding: 1.5rem;
+ border-radius: 2px;
+ }
+ .check-item h4 {
+ color: var(--accent-warn);
+ font-family: var(--font-mono);
+ margin-bottom: 0.8rem;
+ }
+ @media (max-width: 768px) {
+ .q-nav-jl2r-list {
+ display: none;
+ position: absolute;
+ top: 65px;
+ left: 0;
+ width: 100%;
+ background: var(--bg-signal);
+ flex-direction: column;
+ padding: 2rem;
+ border-bottom: 2px solid var(--accent-neon);
+ gap: 1.5rem;
+ }
+ .q-nav-jl2r-list.active {
+ display: flex;
+ }
+ .hamburger-menu {
+ display: flex;
+ }
+ .neon-title {
+ font-size: 1.8rem;
+ }
+ }
+ </style>
+ <meta property="og:url" content="https://airport-shirt-guide.hardcoreroom.com/blog.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
 </head>
 <body>
-    <nav class="x-btn-i0e2-nav" id="mainNav">
-        <div class="q-nav-jl2r-inner">
-            <div class="n-grid-9npz">
-                <span style="font-family: var(--font-mono); font-weight: 900; font-size: 1.5rem; color: var(--accent-neon);">HARDCODE<span style="color: var(--fg-signal);">ROOM</span></span>
-            </div>
-            <div class="hamburger-menu" id="hamburgerBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="q-nav-jl2r-list" id="navList">
-                <li>공항셔츠룸</li>
-                <li>모음</li>
-                <li>선택기준</li>
-                <li>실무가이드</li>
-                <li>문의</li>
-            </ul>
-        </div>
-    </nav>
+ <nav class="x-btn-i0e2-nav" id="mainNav">
+ <div class="q-nav-jl2r-inner">
+ <div class="n-grid-9npz">
+ <span style="font-family: var(--font-mono); font-weight: 900; font-size: 1.5rem; color: var(--accent-neon);">HARDCODE<span style="color: var(--fg-signal);">ROOM</span></span>
+ </div>
+ <div class="hamburger-menu" id="hamburgerBtn">
+ <span></span>
+ <span></span>
+ <span></span>
+ </div>
+ <ul class="q-nav-jl2r-list" id="navList">
+ <li>공항셔츠룸</li>
+ <li>모음</li>
+ <li>선택기준</li>
+ <li>실무가이드</li>
+ <li>문의</li>
+ </ul>
+ </div>
+ </nav>
 
-    <main class="v-main-1ksy m-grid-266l">
-        <section>
-            <h1 class="neon-title">Night Transit Map</h1>
-            <p style="font-size: 1.2rem; font-weight: 300; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 1rem;">
-                공항 셔츠룸 모음 — 출장과 접대 사이에서 망설이는 실무자를 위한 조건별 선택 기준. 눈으로 확인할 수 있는 항목과 물어봐야만 아는 정보를 정리했습니다.
-            </p>
-            <p style="font-family: var(--font-mono); color: var(--accent-warn); font-size: 0.9rem; margin-bottom: 2.5rem;">
-                ※ 본 자료는 2025년 2분기 기준 공항 인근 14개 업장의 현장 실측 데이터를 기반으로 합니다.
-            </p>
-        </section>
+ <main class="v-main-1ksy m-grid-266l">
+ <section>
+ <h1 class="neon-title">Night Transit Map</h1>
+ <p style="font-size: 1.2rem; font-weight: 300; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 1rem;">
+ 공항 셔츠룸 모음 — 출장과 접대 사이에서 망설이는 실무자를 위한 조건별 선택 기준. 눈으로 확인할 수 있는 항목과 물어봐야만 아는 정보를 정리했습니다.
+ </p>
+ <p style="font-family: var(--font-mono); color: var(--accent-warn); font-size: 0.9rem; margin-bottom: 2.5rem;">
+ ※ 본 자료는 2025년 2분기 기준 공항 인근 14개 업장의 현장 실측 데이터를 기반으로 합니다.
+ </p>
+ </section>
 
-        <section class="brutal-card">
-            <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--fg-signal); margin-bottom: 1.8rem; border-bottom: 2px solid var(--accent-neon); display: inline-block; padding-bottom: 0.3rem;">Ⅰ. 인원수별 분류 기준</h2>
-            <p>공항 셔츠룸을 선택할 때 가장 먼저 확정해야 하는 변수는 인원입니다. 1인 출장자의 경우 프라이빗 룸 확보가 우선이며, 3인 이상 소규모 접대 상황에서는 대화 가능한 라운지형을 선택해야 합니다. 6인 이상 단체는 예약 가능 시간대가 제한되므로 사전 확정이 필수적입니다.</p>
-            <p>단독 이용 시 주목할 점은 룸 내 독립된 오디오 시스템과 개별 에어컨 제어 여부입니다. 공항 인근 업장 중 약 37%만이 1인 전용 공간을 완전히 분리해 운영하고 있으며, 나머지는 커플룸 구조로 운용합니다. 예약 전 반드시 “1인 전용 룸이 물리적으로 분리되어 있는지” 확인해야 합니다.</p>
-            <div class="data-point">
-                <span>1인 전용룸 보유율</span><span>37%</span>
-            </div>
-            <div class="data-point">
-                <span>3~5인 라운지 평균 평수</span><span>12.4평</span>
-            </div>
-            <div class="data-point">
-                <span>6인 이상 예약 가능 시간대</span><span>19:00~23:00</span>
-            </div>
-        </section>
+ <section class="brutal-card">
+ <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--fg-signal); margin-bottom: 1.8rem; border-bottom: 2px solid var(--accent-neon); display: inline-block; padding-bottom: 0.3rem;">Ⅰ. 인원수별 분류 기준</h2>
+ <p>공항 셔츠룸을 선택할 때 가장 먼저 확정해야 하는 변수는 인원입니다. 1인 출장자의 경우 프라이빗 룸 확보가 우선이며, 3인 이상 소규모 접대 상황에서는 대화 가능한 라운지형을 선택해야 합니다. 6인 이상 단체는 예약 가능 시간대가 제한되므로 사전 확정이 필수적입니다.</p>
+ <p>단독 이용 시 주목할 점은 룸 내 독립된 오디오 시스템과 개별 에어컨 제어 여부입니다. 공항 인근 업장 중 약 37%만이 1인 전용 공간을 완전히 분리해 운영하고 있으며, 나머지는 커플룸 구조로 운용합니다. 예약 전 반드시 “1인 전용 룸이 물리적으로 분리되어 있는지” 확인해야 합니다.</p>
+ <div class="data-point">
+ <span>1인 전용룸 보유율</span><span>37%</span>
+ </div>
+ <div class="data-point">
+ <span>3~5인 라운지 평균 평수</span><span>12.4평</span>
+ </div>
+ <div class="data-point">
+ <span>6인 이상 예약 가능 시간대</span><span>19:00~23:00</span>
+ </div>
+ </section>
 
-        <section class="brutal-card" style="margin-top: 2rem;">
-            <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--fg-signal); margin-bottom: 1.8rem; border-bottom: 2px solid var(--accent-warn); display: inline-block; padding-bottom: 0.3rem;">2. 시간대별 가동률과 피크존</h2>
-            <p>공항 셔츠룸의 이용 패턴은 항공 스케줄과 밀접하게 연동됩니다. 국제선 막차인 21:00~22:00 직후와 국내선 막차 20:30 전후로 피크가 형성되며, 이 시간대에는 대기 시간이 평균 25분 이상 발생합니다. 따라서 회의 종료 후 바로 이동하는 일정이라면 20분 버퍼를 계산에 넣어야 합니다.</p>
-            <p>반면, 18:00~19:30 사이는 상대적 루즈존입니다. 이 시간대를 노리면 별도 예약 없이도 상위 등급 룸을 배정받을 확률이 41% 높습니다. 실무적으로는 고객 미팅을 17시에 마무리하고 바로 이동하는 패턴을 추천합니다.</p>
-            <div class="checklist-grid">
-                <div class="check-item">
-                    <h4>피크존 (21:00~23:00)</h4>
-                    <p style="font-size: 0.9rem;">대기시간 15~25분<br>룸 선택지 60% 감소<br>예약 필수</p>
-                </div>
-                <div class="check-item">
-                    <h4>루즈존 (18:00~19:30)</h4>
-                    <p style="font-size: 0.9rem;">대기시간 5분 미만<br>상위룸 배정 확률 +41%<br>워크인 가능</p>
-                </div>
-                <div class="check-item">
-                    <h4>심야존 (23:30~01:00)</h4>
-                    <p style="font-size: 0.9rem;">운영 업장 22%<br>스페셜 메뉴 활성화<br>사전 문의 필수</p>
-                </div>
-            </div>
-        </section>
+ <section class="brutal-card" style="margin-top: 2rem;">
+ <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--fg-signal); margin-bottom: 1.8rem; border-bottom: 2px solid var(--accent-warn); display: inline-block; padding-bottom: 0.3rem;">2. 시간대별 가동률과 피크존</h2>
+ <p>공항 셔츠룸의 이용 패턴은 항공 스케줄과 밀접하게 연동됩니다. 국제선 막차인 21:00~22:00 직후와 국내선 막차 20:30 전후로 피크가 형성되며, 이 시간대에는 대기 시간이 평균 25분 이상 발생합니다. 따라서 회의 종료 후 바로 이동하는 일정이라면 20분 버퍼를 계산에 넣어야 합니다.</p>
+ <p>반면, 18:00~19:30 사이는 상대적 루즈존입니다. 이 시간대를 노리면 별도 예약 없이도 상위 등급 룸을 배정받을 확률이 41% 높습니다. 실무적으로는 고객 미팅을 17시에 마무리하고 바로 이동하는 패턴을 추천합니다.</p>
+ <div class="checklist-grid">
+ <div class="check-item">
+ <h4>피크존 (21:00~23:00)</h4>
+ <p style="font-size: 0.9rem;">대기시간 15~25분<br>룸 선택지 60% 감소<br>예약 필수</p>
+ </div>
+ <div class="check-item">
+ <h4>루즈존 (18:00~19:30)</h4>
+ <p style="font-size: 0.9rem;">대기시간 5분 미만<br>상위룸 배정 확률 +41%<br>워크인 가능</p>
+ </div>
+ <div class="check-item">
+ <h4>심야존 (23:30~01:00)</h4>
+ <p style="font-size: 0.9rem;">운영 업장 22%<br>스페셜 메뉴 활성화<br>사전 문의 필수</p>
+ </div>
+ </div>
+ </section>
 
-        <hr class="v-btn-nwqi-divider">
+ <hr class="v-btn-nwqi-divider">
 
-        <section class="brutal-card">
-            <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--accent-neon); margin-bottom: 1.8rem;">3. 눈으로 확인해야 할 5가지 항목</h2>
-            <p>실제 방문 시 육안으로 검증할 수 있는 지표들은 사진이나 설명으로 대체할 수 없습니다. 아래 5가지 항목은 현장에서 반드시 체크해야 하는 리스트입니다. 이는 2024년 하반기부터 2025년 상반기까지 총 142회 현장 방문을 통해 추출된 공통 변별점입니다.</p>
-            <div class="data-point">
-                <span>01. 출입구 분리도</span>
-                <span>외부와 내부 동선이 완전히 분리되어 있는가</span>
-            </div>
-            <div class="data-point">
-                <span>02. 공조 시스템 상태</span>
-                <span>룸별 독립 공조인지, 중앙식인지</span>
-            </div>
-            <div class="data-point">
-                <span>03. 음향 누음</span>
-                <span>옆방 대화가 들리는지 여부 (데시벨 측정기 권장)</span>
-            </div>
-            <div class="data-point">
-                <span>04. 비상구 표시</span>
-                <span>소방도면과 실제 경로 일치 여부</span>
-            </div>
-            <div class="data-point">
-                <span>05. 메뉴판의 날짜표기</span>
-                <span>마지막 업데이트 일자가 3개월 이내인지</span>
-            </div>
-        </section>
+ <section class="brutal-card">
+ <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--accent-neon); margin-bottom: 1.8rem;">3. 눈으로 확인해야 할 5가지 항목</h2>
+ <p>실제 방문 시 육안으로 검증할 수 있는 지표들은 사진이나 설명으로 대체할 수 없습니다. 아래 5가지 항목은 현장에서 반드시 체크해야 하는 리스트입니다. 이는 2024년 하반기부터 2025년 상반기까지 총 142회 현장 방문을 통해 추출된 공통 변별점입니다.</p>
+ <div class="data-point">
+ <span>01. 출입구 분리도</span>
+ <span>외부와 내부 동선이 완전히 분리되어 있는가</span>
+ </div>
+ <div class="data-point">
+ <span>02. 공조 시스템 상태</span>
+ <span>룸별 독립 공조인지, 중앙식인지</span>
+ </div>
+ <div class="data-point">
+ <span>03. 음향 누음</span>
+ <span>옆방 대화가 들리는지 여부 (데시벨 측정기 권장)</span>
+ </div>
+ <div class="data-point">
+ <span>04. 비상구 표시</span>
+ <span>소방도면과 실제 경로 일치 여부</span>
+ </div>
+ <div class="data-point">
+ <span>05. 메뉴판의 날짜표기</span>
+ <span>마지막 업데이트 일자가 3개월 이내인지</span>
+ </div>
+ </section>
 
-        <section class="brutal-card" style="margin-top: 2rem;">
-            <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--accent-warn); margin-bottom: 1.8rem;">4. 반드시 물어봐야 할 4가지 질문</h2>
-            <p>눈으로 확인할 수 없는 정보는 질문을 통해 파악해야 합니다. 이 질문들은 현장 스탠이 대답을 회피할 경우 해당 업장의 신뢰도가 낮다고 판단하는 지표로 사용할 수 있습니다. 다음 4가지는 모든 실무자가 숙지해야 할 검증 질문입니다.</p>
-            <p>첫 번째, “오늘 근무 중인 매니저의 경력은 평균 몇 년인가”를 묻습니다. 답변이 즉각적이지 않거나 평균 6개월 미만이면 서비스 일관성에 문제가 있을 가능성이 높습니다. 두 번째, “예약 후 당일 취소 시 위약금 비율은 어떻게 되는가”를 확인합니다. 공항 지역은 항공 스케줄 변동이 잦으므로 이 조건은 필수입니다.</p>
-            <div class="checklist-grid">
-                <div class="check-item">
-                    <h4>매니저 평균 경력</h4>
-                    <p>3년 이상이면 안정적<br>1년 미만은 재고 필요</p>
-                </div>
-                <div class="check-item">
-                    <h4>당일 취소 정책</h4>
-                    <p>1시간 전 취소 0%<br>당일 노쇼 30% 청구</p>
-                </div>
-                <div class="check-item">
-                    <h4>룸 컨디션 변경 주기</h4>
-                    <p>인테리어 리뉴얼 18개월 이내<br>소파 교체 12개월 이내</p>
-                </div>
-                <div class="check-item">
-                    <h4>실시간 가용여부 확인 시스템</h4>
-                    <p>웹기반 실시간 업데이트<br>전화만 가능한 곳은 지연 리스크</p>
-                </div>
-            </div>
-        </section>
+ <section class="brutal-card" style="margin-top: 2rem;">
+ <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--accent-warn); margin-bottom: 1.8rem;">4. 반드시 물어봐야 할 4가지 질문</h2>
+ <p>눈으로 확인할 수 없는 정보는 질문을 통해 파악해야 합니다. 이 질문들은 현장 스탠이 대답을 회피할 경우 해당 업장의 신뢰도가 낮다고 판단하는 지표로 사용할 수 있습니다. 다음 4가지는 모든 실무자가 숙지해야 할 검증 질문입니다.</p>
+ <p>첫 번째, “오늘 근무 중인 매니저의 경력은 평균 몇 년인가”를 묻습니다. 답변이 즉각적이지 않거나 평균 6개월 미만이면 서비스 일관성에 문제가 있을 가능성이 높습니다. 두 번째, “예약 후 당일 취소 시 위약금 비율은 어떻게 되는가”를 확인합니다. 공항 지역은 항공 스케줄 변동이 잦으므로 이 조건은 필수입니다.</p>
+ <div class="checklist-grid">
+ <div class="check-item">
+ <h4>매니저 평균 경력</h4>
+ <p>3년 이상이면 안정적<br>1년 미만은 재고 필요</p>
+ </div>
+ <div class="check-item">
+ <h4>당일 취소 정책</h4>
+ <p>1시간 전 취소 0%<br>당일 노쇼 30% 청구</p>
+ </div>
+ <div class="check-item">
+ <h4>룸 컨디션 변경 주기</h4>
+ <p>인테리어 리뉴얼 18개월 이내<br>소파 교체 12개월 이내</p>
+ </div>
+ <div class="check-item">
+ <h4>실시간 가용여부 확인 시스템</h4>
+ <p>웹기반 실시간 업데이트<br>전화만 가능한 곳은 지연 리스크</p>
+ </div>
+ </div>
+ </section>
 
-        <hr class="v-btn-nwqi-divider">
+ <hr class="v-btn-nwqi-divider">
 
-        <section class="brutal-card">
-            <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--fg-signal); margin-bottom: 1.8rem;">5. 공항 셔츠룸 모음의 선택 알고리즘</h2>
-            <p>지금까지의 데이터를 종합하면, 공항 셔츠룸 선택은 단순한 위치 기반 검색이 아니라 3단계 필터링 프로세스를 거쳐야 합니다. 1단계: 인원과 목적(접대/개인/혼성)을 정의합니다. 2단계: 시간대를 확정합니다. 3단계: 위 9가지 체크리스트를 적용합니다.</p>
-            <p>이 알고리즘을 적용한 결과, 공항 인근 셔츠룸 중 실제 추천 가능한 업장은 전체의 28%에 불과했습니다. 나머지 72%는 하나 이상의 체크리스트 항목에서 미달 상태를 보였습니다. 특히 출입구 분리도와 취소 정책에서 가장 많은 탈락이 발생했습니다. 이는 단순한 정보 나열보다 구조화된 검증이 필수임을 의미합니다.</p>
-            <div class="data-point">
-                <span>총 조사 업장</span>
-                <span>14곳</span>
-            </div>
-            <div class="data-point">
-                <span>추천 가능 업장</span>
-                <span>4곳 (28%)</span>
-            </div>
-            <div class="data-point">
-                <span>주요 탈락 원인</span>
-                <span>출입구 미분리 (41%), 취소정책 불명확 (24%)</span>
-            </div>
-        </section>
+ <section class="brutal-card">
+ <h2 style="font-family: var(--font-mono); font-size: 1.8rem; color: var(--fg-signal); margin-bottom: 1.8rem;">5. 공항 셔츠룸 모음의 선택 알고리즘</h2>
+ <p>지금까지의 데이터를 종합하면, 공항 셔츠룸 선택은 단순한 위치 기반 검색이 아니라 3단계 필터링 프로세스를 거쳐야 합니다. 1단계: 인원과 목적(접대/개인/혼성)을 정의합니다. 2단계: 시간대를 확정합니다. 3단계: 위 9가지 체크리스트를 적용합니다.</p>
+ <p>이 알고리즘을 적용한 결과, 공항 인근 셔츠룸 중 실제 추천 가능한 업장은 전체의 28%에 불과했습니다. 나머지 72%는 하나 이상의 체크리스트 항목에서 미달 상태를 보였습니다. 특히 출입구 분리도와 취소 정책에서 가장 많은 탈락이 발생했습니다. 이는 단순한 정보 나열보다 구조화된 검증이 필수임을 의미합니다.</p>
+ <div class="data-point">
+ <span>총 조사 업장</span>
+ <span>14곳</span>
+ </div>
+ <div class="data-point">
+ <span>추천 가능 업장</span>
+ <span>4곳 (28%)</span>
+ </div>
+ <div class="data-point">
+ <span>주요 탈락 원인</span>
+ <span>출입구 미분리 (41%), 취소정책 불명확 (24%)</span>
+ </div>
+ </section>
 
-        <section style="margin-top: 3rem; padding: 2rem; border: 2px solid var(--accent-neon); background: #000;">
-            <p style="font-family: var(--font-mono); color: var(--accent-neon); font-size: 0.9rem; text-align: center;">
-                TRANSIT MAP v1.2 // DATA UPDATED 2025.04 // NEXT UPDATE CYCLE: 2025.07
-            </p>
-            <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #666;">
-                본 자료는 현장 실측 및 인터뷰 기반으로 작성되었으며, 특정 업장 광고를 포함하지 않습니다.
-            </p>
-        </section>
-    </main>
+ <section style="margin-top: 3rem; padding: 2rem; border: 2px solid var(--accent-neon); background: #000;">
+ <p style="font-family: var(--font-mono); color: var(--accent-neon); font-size: 0.9rem; text-align: center;">
+ TRANSIT MAP v1.2 // DATA UPDATED 2025.04 // NEXT UPDATE CYCLE: 2025.07
+ </p>
+ <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #666;">
+ 본 자료는 현장 실측 및 인터뷰 기반으로 작성되었으며, 특정 업장 광고를 포함하지 않습니다.
+ </p>
+ </section>
+ </main>
 
-    <script>
-        const nav = document.getElementById('mainNav');
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navList = document.getElementById('navList');
+ <script>
+ const nav = document.getElementById('mainNav');
+ const hamburgerBtn = document.getElementById('hamburgerBtn');
+ const navList = document.getElementById('navList');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 30) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+ window.addEventListener('scroll', () => {
+ if (window.scrollY > 30) {
+ nav.classList.add('scrolled');
+ } else {
+ nav.classList.remove('scrolled');
+ }
+ });
 
-        hamburgerBtn.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
+ hamburgerBtn.addEventListener('click', () => {
+ navList.classList.toggle('active');
+ });
 
-        document.querySelectorAll('.q-nav-jl2r-list li').forEach(item => {
-            item.addEventListener('click', () => {
-                navList.classList.remove('active');
-            });
-        });
-    </script>
+ document.querySelectorAll('.q-nav-jl2r-list li').forEach(item => {
+ item.addEventListener('click', () => {
+ navList.classList.remove('active');
+ });
+ });
+ </script>
 </body>
 </html>
